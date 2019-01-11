@@ -1,0 +1,9 @@
+def psevdo_telegram(self, body):
+        params = self.params["to_db"]
+        db = corporateDB(params['url_in'])
+        data = json.loads(body)
+        res, mess = db.telegram_procedure_exec(
+            data['group'], data['message'])
+        syslog.syslog("%s: send data for telegramm notification %s with status %s" % (
+            self.queue, body, res))
+        return True

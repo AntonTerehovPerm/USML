@@ -1,0 +1,3 @@
+def callback(self, ch, method, properties, body):
+        if self.notify(body):
+            ch.basic_ack(delivery_tag=method.delivery_tag)

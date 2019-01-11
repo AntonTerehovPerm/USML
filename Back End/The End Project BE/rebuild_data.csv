@@ -1,0 +1,6 @@
+str,str_clear,lvl,language,type_of_code
+'print(a)#вывод','print(a)',0,{'Python': 1},'вывод'
+'write(a)','write(a)',0,{'Delphi': 1},'вывод'
+'int main()','int main()',0,{'C++': 1},'функция'
+'public class Program{','public class Program{',0,{'Java': 1},'класс'
+'public static void main(String[] args) {','public static void main(String[] args) {',1,{'Java': 1},'класс'

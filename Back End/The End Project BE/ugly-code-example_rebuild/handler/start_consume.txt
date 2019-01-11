@@ -1,0 +1,20 @@
+def start_consume(self):
+        try:
+            connection = pika.BlockingConnection(pika.ConnectionParameters(
+                host='localhost'))
+            channel = connection.channel()
+
+            channel.queue_declare(queue=self.queue, durable=True)
+            channel.basic_consume(self.callback,
+                                  queue=self.queue,
+                                  no_ack=False, exclusive=False)
+            channel.basic_qos(prefetch_count=1)
+            channel.start_consuming()
+        except Exception as exc:
+            # channel.stop_consuming()
+            syslog.syslog("Error while consuming %s queue: %s" %
+                          (self.queue, str(exc)))
+        connection.close()
+        sys.exit(1)
+
+        connection.close()

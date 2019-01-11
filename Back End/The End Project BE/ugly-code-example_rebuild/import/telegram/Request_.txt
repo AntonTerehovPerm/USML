@@ -1,0 +1,2 @@
+def Request(proxy_url = '',urllib3_proxy_kwargs = {}):
+	pass

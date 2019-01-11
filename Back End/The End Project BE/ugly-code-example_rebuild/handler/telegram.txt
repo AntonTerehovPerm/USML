@@ -1,0 +1,8 @@
+def telegram(self, body):
+        syslog.syslog("%s: send data to telegramm %s" % (self.queue, body))
+        params = self.params["telegram"]
+        t = telegram_api(params["token"], proxy=params.get('proxy'))
+        data = json.loads(body)
+        chat_id = data["chat_id"]
+        mess = data["message"]
+        return t.send(chat_id, mess) or True

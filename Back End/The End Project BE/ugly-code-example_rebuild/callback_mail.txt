@@ -1,0 +1,2 @@
+def callback_mail(ch, method, properties, body):
+    send_mail(body)

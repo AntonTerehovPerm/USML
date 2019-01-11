@@ -1,0 +1,10 @@
+def send(self, chat, mess):
+        # cmd = self.cmd["send"]
+        mess = mess.encode('utf-8')
+        try:
+            self.bot.sendMessage(chat, mess)
+            return True
+        except Exception as err:
+            messToSyslog = "Fail to sendmessage via telegram_bot: %s" % (err)
+            syslog.syslog('-----------------------------------------')
+            syslog.syslog(" %s" % messToSyslog)

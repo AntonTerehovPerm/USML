@@ -1,0 +1,8 @@
+def stat(self):
+        # cmd=self.cmd["stat"]
+        try:
+            pass
+        except Exception as err:
+            messToSyslog = "Fail to read telegram_bot status: %s" % (err)
+            syslog.syslog('-----------------------------------------')
+            syslog.syslog(" %s" % messToSyslog)

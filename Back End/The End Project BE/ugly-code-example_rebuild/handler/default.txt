@@ -1,0 +1,4 @@
+def default(self, body):
+        messToSyslog = "got " + body + " but not set notifyer"
+        syslog.syslog("%s: %s" % (self.queue, messToSyslog))
+        return True

@@ -1,0 +1,19 @@
+def <name_func>(<paramtr_list_one>):
+    <paramtr_list_two> = []
+
+    for <variable_one> in <paramtr_list_one>:
+        <paramtr_list_two>.append(None)
+	--> <variable_one>
+    while True:
+        <variable_two> = 0
+        for <variable_one> in <paramtr_list_one>:
+            if not <paramtr_list_two>[<variable_two>] or not <paramtr_list_two>[<variable_two>].is_alive():
+                <paramtr_list_two>[<variable_two>] = Thread(target=<variable_one>)
+                <paramtr_list_two>[<variable_two>].daemon = True
+                <paramtr_list_two>[<variable_two>].start()
+                syslog.syslog("Starting thread for: %s" % str(<variable_one>))
+            <paramtr_list_two>[<variable_two>].join(1)
+            <variable_two> = <variable_two> + 1
+
+        time.sleep(10)
+	--> clear all

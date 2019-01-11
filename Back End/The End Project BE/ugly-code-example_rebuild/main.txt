@@ -1,0 +1,22 @@
+if __name__ == "__main__":
+    syslog.openlog('some_tag', syslog.LOG_PID, syslog.LOG_NOTICE)
+
+    try:
+        thr_list = [
+            start_consume,
+            start_consume,
+            start_consume,
+            start_consume,
+            start_consume,
+            start_consume
+        ]
+
+        for n in ["queue_Tgm_1", "queue_tlgrm"]:
+            t = handler(n)
+            thr_list.append(t.start_consume)
+
+        Supervisor(thr_list)
+
+    except KeyboardInterrupt:
+        print("EXIT")
+        raise

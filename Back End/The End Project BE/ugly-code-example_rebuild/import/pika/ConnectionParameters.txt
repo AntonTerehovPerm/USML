@@ -1,0 +1,2 @@
+def ConnectionParameters(host = ''):
+	pass

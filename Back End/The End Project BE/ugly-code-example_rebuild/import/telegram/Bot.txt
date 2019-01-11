@@ -1,0 +1,2 @@
+def Bot(token = '', request = ''):
+	pass

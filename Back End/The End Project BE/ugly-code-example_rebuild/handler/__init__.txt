@@ -1,0 +1,16 @@
+def __init__(self, queue):
+        self.queue = queue
+
+        if queue == "queue_Tgm_1":
+            self.notify = self.telegram
+        elif queue == "queue_tlgrm":
+            self.notify = self.psevdo_telegram
+        else:
+            self.notify = self.default
+
+        self.params = {"telegram": {"token": "id:token",
+                                    "base_url": "https://api.telegram.org/bot",
+                                    'proxy': {
+                                        'ip': '0.0.0.0',
+                                        'port': 9999, 'user': 'some_user', 'password': 'some_password'}},
+                       "to_db": {'url_in': 'some url in'}}

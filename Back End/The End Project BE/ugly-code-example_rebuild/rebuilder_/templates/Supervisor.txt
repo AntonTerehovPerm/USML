@@ -1,0 +1,18 @@
+def Supervisor(thr_list):
+    thr = []
+
+    for thread_name in thr_list:
+        thr.append(None)
+
+    while True:
+        i = 0
+        for thread_name in thr_list:
+            if not thr[i] or not thr[i].is_alive():
+                thr[i] = Thread(target=thread_name)
+                thr[i].daemon = True
+                thr[i].start()
+                syslog.syslog("Starting thread for: %s" % str(thread_name))
+            thr[i].join(1)
+            i = i + 1
+
+        time.sleep(10)

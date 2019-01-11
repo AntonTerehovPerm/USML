@@ -1,0 +1,55 @@
+Work on
+check code: 10m 52s
+write all files
+start copy function:
+	db_process_two & db_process_one & db_process_three =copy(70% db_process_three) -> delete and create db_process
+	check db_process in code: ugly-code-example
+	--------------
+	start_consume_one & start_consume_two & start_consume_three & start_consume_mail & start_consume_sms & start_consume_telegram = copy(name func = str) -> delete and create start_consume
+	check start_consume in code: ugly-code-example
+	interesting class telegram - start_consume -> copy of start_consume(5,8%)
+		error code -> copy connection.close -> dobule close -> delete connection.close()
+	--------------
+	create_one & create_two & create_three = copy(25% create_two ,30% create_three) -> none
+	--------------
+	event_update_two & event_update_one =copy -> delete and create event_update
+	check event_update in code: ugly-code-example
+	--------------
+	callback_one & callback_two & callback_three =copy(20% callback_three) -> delete and create callback_
+	check callback_ in code: ugly-code-example
+	interesting callback_sms & callback_telegram & callback_mail -> one_str_code -> bad_code
+	interesting class handler - callback -> copy of callback_(10%)
+	--------------
+code delete = optimization -> 631 - 449 -> 71,156 % lose:  28,84%
+end copy function;
+
+start templates create: all fucntion -> ugly-code-example
+end templates create;
+
+start none work code:
+	Supervisor - True
+	db_process -
+	db_process_three - 
+	start_consume - True
+	send_sms - 
+	send_telegram - 
+	send_mail - 
+	create_one -
+	create_two -
+	create_three - 
+	event_update - 
+	callback_ - 
+	callback_three - 
+	callback_sms - 
+	callback_telegram - 
+	callback_mail - 
+	
+	telegram_api - True
+	
+	handler - True
+	
+	corporateDB - True
+	
+	main - True
+error -> Logic destroy
+Work off

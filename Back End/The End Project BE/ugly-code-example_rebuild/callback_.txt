@@ -1,0 +1,8 @@
+def callback_(ch, method, properties, body):
+    row = create_two(body)
+    db_result = db_process_two(row)
+    result = event_update_two(db_result)
+    if result:
+        ch.basic_ack(delivery_tag=method.delivery_tag)
+    else:
+        ch.basic_nack(delivery_tag=method.delivery_tag)

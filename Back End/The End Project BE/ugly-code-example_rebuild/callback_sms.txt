@@ -1,0 +1,2 @@
+def callback_sms(ch, method, properties, body):
+    send_sms(body)

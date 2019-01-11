@@ -1,0 +1,6 @@
+def __init__(self, url_in):
+        self.connection = dbModule.Connection("login/password")
+        self.cursor = self.connection.cursor()
+        self.cursor.execute('''BEGIN
+                            some_initial_procedure(%s);
+                            END;''' % url_in)
